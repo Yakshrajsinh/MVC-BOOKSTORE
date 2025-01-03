@@ -20,7 +20,7 @@ const index=async(req,res)=>{
 }
 const single=async(req,res)=>{
     const id=req.params.id
-    // console.log(id);
+    console.log(id);
     const book=await Book.findById(id)
     res.json({
         book
