@@ -7,13 +7,14 @@ const common=
     trim:true
 }
 const Bookschema= new Schema({
-    book_name:common,
+    book_title:common,
     book_price:{
         ...common,
         type:Number,
-        unique:true
+        // unique:true
     },
-    book_desc:common
+    book_desc:common,
+    book_auth:common
 })
 
 const Book=model('Book',Bookschema)

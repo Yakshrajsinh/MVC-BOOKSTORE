@@ -26,6 +26,26 @@ const single=async(req,res)=>{
         book
     })
 }
+const trash=async(req,res)=>{
+    const id = req.params.id
+    console.log(id);
+    const book=await Book.findByIdAndDelete(id)
+    res.json({
+        messege:'data deleted',
+        book
+    }) 
+}
+const update=async(req,res)=>{
+    const {id} = req.query
+    const {book_title,book_price,book_desc,book_auth}=req.body
+    const book=await Book.findByIdAndUpdate(
+        {_id:id},
+        {book_title,book_price,book_desc,book_auth}
+    )
+    res.json({
+        messege:"data updated",
+        book
+    })
+}
 
-
-module.exports={store,index,single}
+module.exports={store,index,single,trash,update}
