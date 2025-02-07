@@ -78,6 +78,7 @@
           <th scope="col">Price</th>
           <th scope="col">Author</th>
           <th scope="col">Description</th>
+          <th scope="col">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -88,6 +89,7 @@
           <td><%=ele.book_price%></td>
           <td><%=ele.book_desc%></td>
           <td><%=ele.book_auth%></td>
+          <td><a href="/api/book/<%=ele._id%>" class="btn btn-outline-danger">Delete</a></td>
         </tr>
      <% }) %>
       </tbody>

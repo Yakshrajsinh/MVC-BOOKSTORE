@@ -4,8 +4,6 @@ const app=express()
 
 app.post('/',controller.store)
 app.get('/',controller.index)
-app.get('/:id',controller.single)
-app.delete('/:id',controller.trash)
-app.put('/',controller.update)
+app.get('/:id',controller.trash)
 
 module.exports=app
